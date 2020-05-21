@@ -4,7 +4,11 @@
 
 <ul>
   <% @cocktail.ingredients.each do |ingredient| %>
-    <li><%= ingredient.name %></li>
+    <li> <%= ingredient.name %>
+      <% @cocktail.doses.each do |dose| %>
+        <span><%= dose.description %> (<%= link_to "🗑 delete", dose_path(dose), method: :delete %>)</span>
+      <% end %>
+    </li>
   <% end %>
 </ul>
 
