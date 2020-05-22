@@ -1,14 +1,15 @@
-.navbar-lewagon {
+.navbar {
+  display:flex;
   justify-content: flex-end;
   background: transparent;
-}
-
-.navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+
+  li {  list-style-type: none;
+  }
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-  border-radius: 50%;
-
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }

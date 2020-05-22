@@ -1,0 +1,24 @@
+.cards-category {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  li {
+    list-style-type: none;
+  }
+ }
+
+ .main-content {
+
+ }
+
+@media (max-width: 780px) {
+  .cards-category {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .cards-category {
+    grid-template-columns: 1fr;
+  }
+}

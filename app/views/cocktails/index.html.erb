@@ -1,26 +1,21 @@
-<h1>See all Cocktails</h1>
-<!--
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-12">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
+
+<div class="container">
+  <div class="cards-category">
+
+      <% @cocktails.each do |cocktail| %>
+        <% if cocktail.photo %>
+          <% background_url = cl_image_path cocktail.photo.key, widt: 400, height: 500, crop: :fill%>
+        <% else %>
+          <% background_url = 'https://source.unsplash.com/500x400/?cocktail' %>
+        <% end %>
+        <div class="card" style=" background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.43)),url(<%= background_url %>)">
+          <div class="card-description">
+            <h2><%= cocktail.name %></h2>
+          </div>
+          <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
+        </div>
+      <% end %>
   </div>
 </div>
 
- -->
-<ul>
-  <% @cocktails.each do |cocktail| %>
-    <li>
-      <%= link_to cocktail.name, cocktail_path(cocktail)  %>
-     </li>
-  <% end %>
-</ul>
 
-<%= link_to "➕ Add a Cocktail", new_cocktail_path  %>

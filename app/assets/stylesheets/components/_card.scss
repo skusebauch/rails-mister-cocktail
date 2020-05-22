@@ -1,1 +1,34 @@
-_card.scss
+.card {
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(21, 20, 20, 0.74);
+  border: none;
+
+  &:hover {
+    transform: scale(1.1);
+    transition: 0.2s cubic-bezier(0.46, 0.03, 0.52, 0.96);
+  }
+}
+
+.card-description {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  h2 {
+    font-size: 24px;
+    font-weight: center;
+    color: white
+  }
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: transparent;
+}
