@@ -1,3 +1,7 @@
+<% if @cocktail.photo.attached? %>
+  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+
 <h2><%= @cocktail.name %></h2>
 
 <h3>Ingredients</h3>
