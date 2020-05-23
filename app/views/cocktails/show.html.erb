@@ -1,20 +1,24 @@
-<% if @cocktail.photo.attached? %>
-  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<% content_for :navbar do %>
+  <%= render 'navbar_show' %>
 <% end %>
 
-<h2><%= @cocktail.name %></h2>
+<div class="container">
+  <div class="product-overview">
+    <div class="card product-overview-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.43)), url(<%= cl_image_path @cocktail.photo.key %>)">
+      <div class="card-description">
+        <h2><%= @cocktail.name %></h2>
+      </div>
+    </div>
 
-<h3>Ingredients</h3>
-
-<ul>
-  <% @cocktail.ingredients.each do |ingredient| %>
-    <li> <%= ingredient.name %>
-      <% @cocktail.doses.each do |dose| %>
-        <span><%= dose.description %> (<%= link_to "🗑 delete", dose_path(dose), method: :delete %>)</span>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to "🔙 Back to Overview", cocktails_path %> |
-<%= link_to "➕ Add a Dose", new_cocktail_dose_path(@cocktail)  %>
+    <div class="ingredients-overview">
+      <h3>Ingredients <%= link_to '<i class="fas fa-plus-circle"></i>'.html_safe, new_cocktail_dose_path(@cocktail), class: "ingredients-add" %></h3>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <%= dose.ingredient.name %>
+            <span> <i class="fas fa-thermometer-three-quarters"></i> <%= dose.description %> <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, dose_path(dose), method: :delete %></span>
+          </li>
+          <% end %>
+      </ul>
+    </div>
+</div>

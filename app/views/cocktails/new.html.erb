@@ -1,9 +1,23 @@
-<h2>Add a new Cocktail</h2>
-
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
+<% content_for :navbar do %>
+  <%= render 'navbar_new' %>
 <% end %>
 
-<%= link_to "🔙 Back to Overview", cocktails_path %>
+<div class="container">
+
+
+  <div class="product-overview">
+    <div class="card product-overview-image" style="background-image: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.43)), url(https://res.cloudinary.com/dgwgea5k3/image/upload/v1590242127/background_kqqppn.jpg)">
+      <div class="card-description">
+        <h2>Add a new Cocktail</h2>
+      </div>
+    </div>
+
+    <div class="form">
+      <%= simple_form_for(@cocktail) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :photo, as: :file %>
+        <%= f.submit class: "button"%>
+      <% end %>
+    </div>
+  </div>
+</div>

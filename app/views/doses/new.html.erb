@@ -1,9 +1,13 @@
-<h2>Add a new Ingredient</h2>
-
-<%= simple_form_for([@cocktail, @dose]) do |f| %>
-  <%= f.input :description %>
-  <%= f.association :ingredient %>
-  <%= f.submit %>
+<% content_for :navbar do %>
+  <%= render 'navbar_new' %>
 <% end %>
 
-<%= link_to "🔙 Back to Overview", cocktails_path %>
+<div class="container">
+  <h2>Add a new Ingredient</h2>
+
+  <%= simple_form_for([@cocktail, @dose]) do |f| %>
+    <%= f.input :description %>
+    <%= f.association :ingredient %>
+    <%= f.submit class: "button"%>
+  <% end %>
+</div>

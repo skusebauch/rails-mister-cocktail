@@ -1,0 +1,21 @@
+.product-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.product-overview-image {
+  margin-bottom: 15px;
+  margin-right: 15px;
+  &:hover {
+    transform: none;
+    transition: none;
+  }
+}
+@media (max-width: 540px) {
+  .product-overview {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
