@@ -3,7 +3,7 @@
 
       <% @cocktails.each do |cocktail| %>
         <% if cocktail.photo %>
-          <% background_url = cl_image_path cocktail.photo.key, widt: 400, height: 500, crop: :fill%>
+          <% background_url = cl_image_path cocktail.photo.key, crop: :scale%>
         <% else %>
           <% background_url = 'https://source.unsplash.com/500x400/?cocktail' %>
         <% end %>

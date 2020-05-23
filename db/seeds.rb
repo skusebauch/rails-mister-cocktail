@@ -26,20 +26,32 @@ end
 
 puts "Create three default cocktails"
 
-url1 = URI.open('https://res.cloudinary.com/dgwgea5k3/image/upload/v1590254625/blue-margarita-with-lemon-2480828_hnta22.jpg')
-url2 = URI.open('https://res.cloudinary.com/dgwgea5k3/image/upload/v1590254555/alcoholic-bar-beverage-blur-338713_tr4ljk.jpg')
-url3 = URI.open('https://res.cloudinary.com/dgwgea5k3/image/upload/v1590254707/a-drink-in-a-glass-with-green-leaf-2691360_cpcr6v.jpg')
+classic_url1 = URI.open('https://res.cloudinary.com/dgwgea5k3/image/upload/v1590256180/alcohol-beverage-blur-brown-616836_wr304o.jpg')
+healthy_url2 = URI.open('https://res.cloudinary.com/dgwgea5k3/image/upload/v1590256141/alcohol-alcoholic-bar-beverage-4784_m6soja.jpg')
+driver_url3 = URI.open('https://res.cloudinary.com/dgwgea5k3/image/upload/v1590256127/carrot-fruit-beside-lemon-fruit-on-black-wooden-table-161440_sonfjf.jpg')
+coconut_url4 = URI.open('https://res.cloudinary.com/dgwgea5k3/image/upload/v1590256128/clear-drinking-glass-filled-with-beverage-2103945_kglqjs.jpg')
+fruit_url5 = URI.open('https://res.cloudinary.com/dgwgea5k3/image/upload/v1590256220/blur-breakfast-close-up-cocktail-209594_npdaz2.jpg')
+martini_url6 = URI.open('https://res.cloudinary.com/dgwgea5k3/image/upload/v1590256320/martini-glass-on-table-3073970_ydq2sj.jpg')
 
-german_killer = Cocktail.new(name: "German Killer")
-one_shot = Cocktail.new(name: "Just one")
-driver_friendly = Cocktail.new(name: "Driver friendly")
+el_classico = Cocktail.new(name: "El Classico")
+healthy_hangover = Cocktail.new(name: "Healthy Hangover")
+driver_friendly = Cocktail.new(name: "Driver Friendly")
+coconut_bomb = Cocktail.new(name: "Coconut Bomb")
+fruit_passion = Cocktail.new(name: "Fruit Passion")
+martini = Cocktail.new(name: "Martini")
 
-german_killer.photo.attach(io: url1, filename: "german_killer.jpg", content_type: "image/jpg")
-one_shot.photo.attach(io: url2, filename: "one_shot.jpg", content_type: "image/jpg")
-driver_friendly.photo.attach(io: url3, filename: "driver_friendly.png", content_type: "image/png")
+el_classico.photo.attach(io: classic_url1, filename: "el_classico.jpg", content_type: "image/jpg")
+healthy_hangover.photo.attach(io: healthy_url2, filename: "healthy_hangover.jpg", content_type: "image/jpg")
+driver_friendly.photo.attach(io: driver_url3, filename: "driver_friendly.png", content_type: "image/jpg")
+coconut_bomb.photo.attach(io: coconut_url4, filename: "coconut_bomb.png", content_type: "image/jpg")
+fruit_passion.photo.attach(io: fruit_url5, filename: "fruit_passion.png", content_type: "image/jpg")
+martini.photo.attach(io: martini_url6, filename: "martini.png", content_type: "image/jpg")
 
-german_killer.save
-one_shot.save
+el_classico.save
+healthy_hangover.save
 driver_friendly.save
+coconut_bomb.save
+fruit_passion.save
+martini.save
 
 puts "Completed!"
